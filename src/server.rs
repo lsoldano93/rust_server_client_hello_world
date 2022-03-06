@@ -11,11 +11,11 @@ impl MyServer
    {
       MyServer
       { 
-         tcp_listener : std::net::TcpListener::bind(addr).unwrap() 
+         tcp_listener : std::net::TcpListener::bind(addr).unwrap()
       }
    }
 
-   pub fn start(&self) -> std::io::Result<()>
+   pub fn start(&self)
    {
       match self.tcp_listener.accept() 
       {
@@ -53,7 +53,7 @@ impl MyServer
 
       }
 
-      return Ok(());
+      return;
    }
 
 }
